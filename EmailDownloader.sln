@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityWebGroup.Client", "Client\UnityWebGroup.Client.csproj", "{78C857A0-9960-4424-8D8C-10D23CFC0EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityWebGroup.Services", "UnityWebGroup.Services\UnityWebGroup.Services.csproj", "{555AAC65-8551-42CF-AE44-845AA405D093}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78C857A0-9960-4424-8D8C-10D23CFC0EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C857A0-9960-4424-8D8C-10D23CFC0EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C857A0-9960-4424-8D8C-10D23CFC0EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C857A0-9960-4424-8D8C-10D23CFC0EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555AAC65-8551-42CF-AE44-845AA405D093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555AAC65-8551-42CF-AE44-845AA405D093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555AAC65-8551-42CF-AE44-845AA405D093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555AAC65-8551-42CF-AE44-845AA405D093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
