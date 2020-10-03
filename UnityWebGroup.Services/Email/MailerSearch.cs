@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnityWebGroup.Services
+namespace UnityWebGroup.Services.Email
 {
     public class MailerSearch
     {
@@ -18,6 +18,10 @@ namespace UnityWebGroup.Services
 
         public bool SearchByDateRange { get; set; }
         public bool Unread { get; set; }
+
+        public bool  SmallerThenSize { get; set; }
+
+        public long SmallerThenSizeValue { get; set; }
 
         /// <summary>
         ///      SentSince = Date  = DateFrom

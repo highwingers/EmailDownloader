@@ -67,6 +67,7 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -104,6 +105,11 @@
                     <TextBox x:Name="txtSender" ></TextBox>
                 </DockPanel>
 
+                <DockPanel Margin="1"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+                    <CheckBox x:Name="chkSmallerThenSize"  Content="Ignore Attatchments Smaller Then (KB): " IsChecked="false"></CheckBox>
+                    <TextBox x:Name="txtSmallerThen" Width="50" Text="15"></TextBox>
+                </DockPanel>
+                
 
             </Grid>
         </Border>

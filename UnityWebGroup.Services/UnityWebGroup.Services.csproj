@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gappalytics, Version=1.0.44.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gappalytics.1.0.44\lib\net40\Gappalytics.dll</HintPath>
+    </Reference>
     <Reference Include="MimeTypeMap, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MediaTypeMap.2.1.0.0\lib\net40\MimeTypeMap.dll</HintPath>
     </Reference>
@@ -48,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mailer.cs" />
-    <Compile Include="MailerSearch.cs" />
+    <Compile Include="Analytics\ITracking.cs" />
+    <Compile Include="Analytics\Tracking.cs" />
+    <Compile Include="Email\Mailer.cs" />
+    <Compile Include="Email\MailerSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

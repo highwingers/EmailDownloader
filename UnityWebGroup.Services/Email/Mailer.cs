@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using MimeTypes;
 using S22.Imap;
-namespace UnityWebGroup.Services
+namespace UnityWebGroup.Services.Email
 {
     public class Mailer
     {
@@ -50,14 +50,14 @@ namespace UnityWebGroup.Services
                     foreach (var view in msg.AlternateViews)
                     {
                         // Generate a Folder with Current Datetime of Email and Attatchment File Name
-                        GenerateDirectorySaveAtttachment(msg, ref index, view);
+                        GenerateDirectorySaveAtttachment(msg, ref index, view, _search);
  
                     }
 
                     foreach (var attachment in msg.Attachments)
                     {
                         // Generate a Folder with Current Datetime of Email and Attatchment File Name
-                        GenerateDirectorySaveAtttachment(msg, ref index, attachment);
+                        GenerateDirectorySaveAtttachment(msg, ref index, attachment, _search);
 
                     }
                 }
@@ -70,8 +70,15 @@ namespace UnityWebGroup.Services
             return true;
         }
 
-        private void GenerateDirectorySaveAtttachment(MailMessage msg, ref int index, Attachment attachment)
+        private void GenerateDirectorySaveAtttachment(MailMessage msg, ref int index, Attachment attachment, MailerSearch filters)
         {
+
+            if (filters.SmallerThenSize == true && attachment.ContentStream.Length <= filters.SmallerThenSizeValue)
+            {
+                return;
+            }
+
+
             var msgDate = (msg.Date() == null) ? "n_a" : ((DateTime)msg.Date()).ToString("dd-MMM-yyyy");
             var attatchmentPath = Path.Combine(this.RootPath, msgDate);
             System.IO.Directory.CreateDirectory(attatchmentPath);
@@ -86,12 +93,16 @@ namespace UnityWebGroup.Services
             index++;
         }
 
-        private void GenerateDirectorySaveAtttachment(MailMessage msg, ref int index, AlternateView attachment)
+        private void GenerateDirectorySaveAtttachment(MailMessage msg, ref int index, AlternateView attachment, MailerSearch filters)
         {
           
 
-            if (attachment.ContentType.MediaType.ToLower().Contains("image") && attachment.ContentStream.Length > 99739 )
+            if (attachment.ContentType.MediaType.ToLower().Contains("image")  )
             {
+                if (filters.SmallerThenSize == true && attachment.ContentStream.Length <= filters.SmallerThenSizeValue)
+                {
+                    return;
+                }
                 var a = attachment.ContentStream.Length;
 
                 if (attachment.ContentId== "image1.07E4091C2F80410042C2B1@69.42.173.37")

@@ -54,6 +54,7 @@ Source: "C:\Users\Default\Documents\Docs\Programming\Emaildownloader\EmailDownlo
 Source: "C:\Users\Default\Documents\Docs\Programming\Emaildownloader\EmailDownloader\Client\bin\Release\UnityWebGroup.Client.pdb"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Default\Documents\Docs\Programming\Emaildownloader\EmailDownloader\Client\bin\Release\UnityWebGroup.Services.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Default\Documents\Docs\Programming\Emaildownloader\EmailDownloader\Client\bin\Release\UnityWebGroup.Services.pdb"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Default\Documents\Docs\Programming\Emaildownloader\EmailDownloader\Client\bin\Release\Gappalytics.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
