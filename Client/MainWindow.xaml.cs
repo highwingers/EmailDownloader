@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows;
 using MahApps.Metro.Controls;
+using UnityWebGroup.Client;
 using UnityWebGroup.Services.Analytics;
 
 namespace Client
@@ -21,7 +22,18 @@ namespace Client
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             tracking = new Tracking("EmailAttatchment", "UA-64794245-3");
+ 
+        }
 
+        private  void DuplicatesOutput(string path)
+        {
+            var dupDataObj = new UnityWebGroup.Services.Duplicates.QueryDuplicates();
+            var byNameSize = dupDataObj.FindDuplicates(path);
+            var byName = dupDataObj.FindDuplicates(path, true, false);
+            var bySize = dupDataObj.FindDuplicates(path, false, true);
+
+            NotepadHelper.ShowMessage(byNameSize + byName + bySize, "Duplicates Report");
+            tracking.TrackPage(path, "Duplicates report Generated");
         }
 
         private async Task ExtractAttatchments()
@@ -49,7 +61,7 @@ namespace Client
                 DateTo = DateTime.Parse(dpTo.Text),
                 SmallerThenSize=chkSmallerThenSize.IsChecked??false,
                 SmallerThenSizeValue= (System.Convert.ToInt32(txtSmallerThen.Text) * 1024)
-            }, (path => { System.Diagnostics.Process.Start(path); }));
+            }, (path => { System.Diagnostics.Process.Start(path); DuplicatesOutput(path); }));
 
             if (result)
             {

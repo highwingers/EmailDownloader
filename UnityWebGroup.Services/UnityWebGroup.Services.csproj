@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Analytics\ITracking.cs" />
     <Compile Include="Analytics\Tracking.cs" />
+    <Compile Include="Duplicates\PortableKey.cs" />
+    <Compile Include="Duplicates\QueryDuplicates.cs" />
     <Compile Include="Email\Mailer.cs" />
     <Compile Include="Email\MailerSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
