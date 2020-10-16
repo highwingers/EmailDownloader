@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\signtool.exe" sign /f C:\Users\Default\Documents\Docs\Code-Sign-12cG.pfx /p 12ce93SAG /t http://timestamp.verisign.com/scripts/timstamp.dll C:\Users\Default\Documents\Docs\Programming\Emaildownloader\EmailDownloader\Client\Output\email_extractor.exe
+pause

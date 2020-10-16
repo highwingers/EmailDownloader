@@ -43,9 +43,11 @@ namespace UnityWebGroup.Services.Email
                 // Lets Create a Parent Directory with Current DateTime Stamp
                 RootFolderWithUniqueName(_search);
 
+                int index = 0;
+
                 foreach (var msg in messages)
                 {
-                    int index = 0;
+                    
 
                     foreach (var view in msg.AlternateViews)
                     {

@@ -48,10 +48,10 @@
 
                 <DockPanel Margin="1"  Grid.Row="1"  Grid.ColumnSpan="4" HorizontalAlignment="left">
                     <Label Content="User" ></Label>
-                    <TextBox Name="txtUser" Text="" Width="300" ></TextBox>
+                    <TextBox Name="txtUser" Text="incoming@unitywebgroup.com" Width="300" ></TextBox>
 
                     <Label Content="Password" ></Label>
-                    <TextBox Name="txtPassword" Text="" Width="300" ></TextBox>
+                    <TextBox Name="txtPassword" Text="asdasd123" Width="300" ></TextBox>
 
                 </DockPanel>
 
